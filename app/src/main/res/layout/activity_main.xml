@@ -26,7 +26,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <FrameLayout
-        android:id="@+id/loading_process_layout"
+        android:id="@+id/loadingProcessLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:alpha="0.5"
