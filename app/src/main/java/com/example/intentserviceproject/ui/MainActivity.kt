@@ -29,7 +29,6 @@ class MainActivity : AppCompatActivity() {
         val customIntent = Intent(this, CustomIntentService::class.java)
 
         binding.systemIntentButton.setOnClickListener {
-            broadcastReceiver = MyBroadcastReceiver()
             val intentFilter = IntentFilter(ACTION_SYSTEM_INTENT_SERVICE)
             sendIntent(2001, "Some action with system intent", systemIntent, intentFilter)
         }
