@@ -1,16 +1,14 @@
-package com.example.intentserviceproject.utils.systemintent
+package com.example.intentserviceproject.utils.customintent
 
-import android.app.IntentService
 import android.content.Intent
+import com.example.intentserviceproject.utils.systemintent.EXTRA_KEY_OUT
 
-const val EXTRA_KEY_OUT = "EXTRA_OUT"
-const val ACTION_SYSTEM_INTENT_SERVICE = "com.example.intentserviceproject.SYSTEM.RESPONSE"
+const val ACTION_CUSTOM_INTENT_SERVICE = "com.example.intentserviceproject.CUSTOM.RESPONSE"
 
-class SystemIntentService : IntentService("name") {
+class CustomIntentService : MyIntentService("name") {
 
     private var extraOut = ""
 
-    @Deprecated("Deprecated in Java")
     override fun onHandleIntent(intent: Intent?) {
         val time = intent?.getIntExtra("time", 0)?.toLong()
         extraOut = intent?.getStringExtra("task").toString()
@@ -24,7 +22,7 @@ class SystemIntentService : IntentService("name") {
         }
 
         val responseIntent = Intent()
-        responseIntent.action = ACTION_SYSTEM_INTENT_SERVICE
+        responseIntent.action = ACTION_CUSTOM_INTENT_SERVICE
         responseIntent.addCategory(Intent.CATEGORY_DEFAULT)
         responseIntent.putExtra(EXTRA_KEY_OUT, extraOut)
         sendBroadcast(responseIntent)
