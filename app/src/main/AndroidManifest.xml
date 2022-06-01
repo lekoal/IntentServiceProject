@@ -13,8 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IntentServiceProject"
         tools:targetApi="31">
+        <service android:name=".utils.systemintent.SystemIntentService" />
+        <service android:name=".utils.customintent.CustomIntentService" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">IntentServiceProject</string>
+    <string name="google_intent_button">system intent</string>
+    <string name="my_intent_button">custom intent</string>
 </resources>
